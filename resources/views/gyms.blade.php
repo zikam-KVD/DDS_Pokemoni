@@ -26,15 +26,15 @@
                 <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr>
-                            <th scope="col" class="px-6 py-3">
+                            <td scope="col" class="px-6 py-3">
                                 ID
-                            </th>
-                            <th scope="col" class="px-6 py-3">
+                            </td>
+                            <td scope="col" class="px-6 py-3">
                                 Název (lokace)
-                            </th>
-                            <th scope="col" class="px-6 py-3">
+                            </td>
+                            <td scope="col" class="px-6 py-3">
                                 Leader
-                            </th>
+                            </td>
                         </tr>
                     </thead>
                     @foreach($areny as $arena)
@@ -43,10 +43,13 @@
                             {{ $arena->id }}
                         </td>
                         <td class="px-6 py-4">
-
+                            {{ $arena->name }}
+                            ({{ $arena->location->name }})
                         </td>
                         <td class="px-6 py-4">
-
+                            @if(null !== $arena->trainer)
+                                {{ $arena->trainer->name }}
+                            @endif
                         </td>
                     </tr>
                     @endforeach

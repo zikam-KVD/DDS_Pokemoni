@@ -25,7 +25,7 @@
             @else
                 <ol>
                     @foreach($lokace as $lok)
-                        <li>{{ $lok->name }}</li>
+                        <li>{{ $lok->id }}. {{ $lok->name }}</li>
                     @endforeach
                 </ol>
             @endif

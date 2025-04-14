@@ -26,27 +26,27 @@
                     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                             <tr>
-                                <th scope="col" class="px-6 py-3">
+                                <td scope="col" class="px-6 py-3">
                                     ID
-                                </th>
-                                <th scope="col" class="px-6 py-3">
+                                </td>
+                                <td scope="col" class="px-6 py-3">
                                     Název
-                                </th>
-                                <th scope="col" class="px-6 py-3">
+                                </td>
+                                <td scope="col" class="px-6 py-3">
                                     Chyceno
-                                </th>
+                                </td>
                             </tr>
                         </thead>
                         @foreach($treneri as $trener)
                         <tr class="odd:bg-white odd:dark:bg-gray-900 even:bg-gray-50 even:dark:bg-gray-800 border-b dark:border-gray-700 border-gray-200">
-                            <td class="px-6 py-4">
+                            <td class="px-6 py-4 text-center">
                                 {{ $trener->id }}
                             </td>
-                            <td class="px-6 py-4">
-
+                            <td class="px-6 py-4 text-center">
+                                {{ $trener->name }}
                             </td>
-                            <td class="px-6 py-4">
-
+                            <td class="px-6 py-4 text-center">
+                                {{ 0 }}
                             </td>
                         </tr>
                         @endforeach

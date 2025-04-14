@@ -1,6 +1,9 @@
 <?php
 
+use App\Models\Gym;
 use App\Models\Trainer;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,7 +15,7 @@ Route::get('/', function () {
  */
 Route::get('/trainers', function() {
 
-    $trainers = null;
+    $trainers = User::all();
 
     return view('trainers', ['treneri' => $trainers]);
 })->name('showTrainers');
@@ -22,7 +25,7 @@ Route::get('/trainers', function() {
  */
 Route::get('/locations', function() {
 
-    $locations = null;
+    $locations = DB::table("locations")->select(["*"])->get();
 
     return view('locations', ['lokace' => $locations]);
 })->name('showLocations');
@@ -32,7 +35,7 @@ Route::get('/locations', function() {
  */
 Route::get('/gyms', function() {
 
-    $gyms = null;
+    $gyms = Gym::all();
 
     return view('gyms', ['areny' => $gyms]);
 })->name('showGyms');
